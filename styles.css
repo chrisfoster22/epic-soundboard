@@ -2,18 +2,22 @@ div {
 	display: inline-block;
 }
 
+body {
+	background-color: #DDDAD6;
+}
+
 .music-board {
 	width: 80%;
 	height: 1000px;
 	max-width: 960px;
 	margin: 0 auto;
-	background-color: forestgreen;
+	background-color: #AE9C96;
 }
 
 .music-btn {
 	height: 50px;
 	width: 150px;
-	background-color: darkgrey;
+	background-color: #DDDAD6;
 	margin: 3%;
 	border-radius: 40px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
@@ -23,7 +27,7 @@ div {
 .slider-bg {
 	height: 40px;
 	width: 120px;
-	background-color: dimgray;
+	background-color: #FFF;
 	margin: 5px 15px;
 	border-radius: 40px;
 }
@@ -31,7 +35,7 @@ div {
 .slider {
 	height: 30px;
 	width: 30px;
-	background-color: blue;
+	background-color: #A6D8DE;
 	margin: 5px 8px;
 	border-radius: 50%;
 }
