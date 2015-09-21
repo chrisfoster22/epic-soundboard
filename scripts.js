@@ -4,20 +4,28 @@ $(document).ready(function(){
 	$(".music-btn").on("click", function(){
 		var target = event.target;
 		var musicSource = "";
-		var targetId = $(target).parentsUntil(".music-board").last()[0].id;
-		var slider = "#" + targetId + " .slider";
 		if ($(target).parent().attr("class") !== "music-board") {
-			musicSource = targetId;
+			musicSource = $(target).parentsUntil(".music-board").last()[0].id;
 		}
 		else {
 			musicSource = target.id;
 		}
+		var slider = "#" + musicSource + " .slider";
 		var current = "#" + musicSource + " audio";
 		if (playing === current){
 			slideStop(slider);
 			$(current)[0].pause();
 			$(current)[0].currentTime = 0;
 			playing = "";
+		}
+		else if (playing != "" && playing !=current) {
+			$(playing)[0].pause();
+			$(playing)[0].currentTime = 0;
+			var playingSlider = $(playing).siblings()[0].children[0];
+			slideStop(playingSlider);
+			$(current)[0].play();
+			playing = current;
+			slidePlay(slider);
 		}
 		else {
 			slidePlay(slider);
